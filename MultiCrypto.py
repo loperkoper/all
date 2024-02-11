@@ -19,12 +19,12 @@ cores = 8
 def seek(r) :
 
 
-    fileETH = "/content/MultiCryptoFinderRich/eth500.txt"
+    fileETH = "/content/all/eth500.txt"
     with open(fileETH) as f :
         add = f.read().split()
         addeth = set(add)
 
-    fileBTC = "/content/MultiCryptoFinderRich/btc500.txt"
+    fileBTC = "/content/Bitcoin_addresses_LATEST.txt"
     with open(fileBTC) as f :
         add = f.read().split()
         addbtc = set(add)
@@ -54,7 +54,7 @@ def seek(r) :
         HDETH.from_private_key(private_key = PRIVATE_KEY)
         privETH = HDETH.private_key()
         ethadd = HDETH.p2pkh_address()
-        print(ethadd)
+        #print(ethadd)
         # =============================================
         HDBTC: HDWallet = HDWallet(symbol = SYMBOL2)
         HDBTC.from_private_key(private_key = privETH)
@@ -65,25 +65,25 @@ def seek(r) :
         btcadd4 = HDBTC.p2wsh_address()
         btcadd5 = HDBTC.p2wsh_in_p2sh_address()
         btcadd6 = HDBTC.p2wpkh_in_p2sh_address()
-        print(btcadd)
+        #print(btcadd)
         # =============================================
         HDTRX: HDWallet = HDWallet(symbol = SYMBOL3)
         HDTRX.from_private_key(private_key = privBTC)
         privTRX = HDTRX.private_key()
         trxadd = HDTRX.p2pkh_address()
-        print(trxadd)
+        #print(trxadd)
         # =============================================
         HDDG: HDWallet = HDWallet(symbol = SYMBOL4)
         HDDG.from_private_key(private_key = privBTC)
         dgpriv = HDDG.private_key()
         dgaddr = HDDG.p2pkh_address()
-        print(dgaddr)
+        #print(dgaddr)
         # =============================================
         HDDS: HDWallet = HDWallet(symbol = SYMBOL5)
         HDDS.from_private_key(private_key = privBTC)
         dashaddr = HDDS.p2pkh_address()
         dashpriv = HDDS.private_key()
-        print(dashaddr)
+        #print(dashaddr)
         # =============================================
 
         print('Total Scan' , str(z) , ' Rich Wallet (Bitcoin/Ethereum/TRON/Dogecoin/Dash)' , end = '\r')
@@ -105,14 +105,14 @@ def seek(r) :
         if ethadd in addeth :
             w += 1
             print('/content/MultiCryptoFinderRich/Ethereum Wallet Finder Now = ' , str(privETH))
-            f1 = open("EthWinnerWalletFinder.txt" , "a")
+            f1 = open("/content/MultiCryptoFinderRich/EthWinnerWalletFinder.txt" , "a")
             f1.write('\nPrivateKey ===========> ' + str(privETH))
             f1.write('\nETHaddress ===========> ' + str(ethadd))
             f1.close()
         if trxadd in addtrx :
             w += 1
             print('/content/MultiCryptoFinderRich/TRX Wallet Winner Now Saved On File PrivateKey ====> ' , str(privTRX))
-            f2 = open("TRXWinnerWalletFinderMulti.txt" , "a")
+            f2 = open("/content/MultiCryptoFinderRich/TRXWinnerWalletFinderMulti.txt" , "a")
             f2.write('\nPrivateKey ==============> ' + str(privTRX))
             f2.write('\nAddressTRX ==============> ' + str(trxadd))
             f2.close()
