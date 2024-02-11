@@ -24,22 +24,22 @@ def seek(r) :
         add = f.read().split()
         addeth = set(add)
 
-    fileBTC = "/content/Bitcoin_addresses_LATEST.txt"
+    fileBTC = "/content/all/btc500.txt"
     with open(fileBTC) as f :
         add = f.read().split()
         addbtc = set(add)
 
-    fileTRX = "/content/MultiCryptoFinderRich/trx500.txt"
+    fileTRX = "/content/all/trx500.txt"
     with open(fileTRX) as f :
         add = f.read().split()
         addtrx = set(add)
 
-    fileDG = "/content/MultiCryptoFinderRich/doge500.txt"
+    fileDG = "/content/all/doge500.txt"
     with open(fileDG) as f :
         add = f.read().split()
         addDG = set(add)
 
-    fileDS = "/content/MultiCryptoFinderRich/Dash500.txt"
+    fileDS = "/content/all/Dash500.txt"
     with open(fileDS) as f :
         add = f.read().split()
         addDS = set(add)
